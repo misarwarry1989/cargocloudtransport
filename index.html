@@ -882,7 +882,6 @@
       resultBox.innerHTML = '<span class="spinner"></span>Calculating route and estimate...';
 
       try {
-        // Use Cloudflare Worker instead of direct OSRM
         const route = await getRouteViaWorker(startLon, startLat, endLon, endLat);
 
         const distanceMeters = route.distance;
