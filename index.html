@@ -450,6 +450,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <div class="nav">
       <div class="nav-logo">
@@ -520,7 +521,7 @@
         <p><strong>Reliability:</strong> We deliver as promised, with clear ETAs and proactive communication.</p>
         <p><strong>Safety:</strong> Strict safety standards for drivers, equipment, and cargo handling.</p>
         <p><strong>Transparency:</strong> Clear pricing, no hidden fees, and honest updates.</p>
-        <p><strong>Customer Focus:</strong> Routes, schedules, and services tailored to your needs.</p>
+        <p><strong>Care:</strong> Whether it’s a family move or a critical freight load, we treat it like our own.</p>
       </div>
     </div>
   </section>
@@ -528,39 +529,24 @@
   <section id="services">
     <div class="container">
       <div class="section-header">
-        <h2>Services Built for Real-World Logistics</h2>
-        <p>From full truckloads to local moves, we cover the lanes and loads that keep your business moving.</p>
+        <h2>Services</h2>
+        <p>From local moves to long-haul freight, we offer flexible solutions tailored to your schedule, cargo, and budget.</p>
       </div>
       <div class="cards">
         <div class="card">
-          <span class="badge">FTL</span>
-          <h3>Full Truckload (FTL) Shipping</h3>
-          <p>Dedicated truck capacity for large shipments requiring fast, secure, point-to-point delivery.</p>
+          <div class="badge">Residential & Commercial</div>
+          <h3>Moving Services</h3>
+          <p>Full-service moving for homes, apartments, and offices with careful loading, transport, and unloading.</p>
         </div>
         <div class="card">
-          <span class="badge">LTL</span>
-          <h3>Less-Than-Truckload (LTL)</h3>
-          <p>Cost-efficient option for smaller shipments that don’t require a full trailer.</p>
+          <div class="badge">Freight & Logistics</div>
+          <h3>Trucking & Hauling</h3>
+          <p>Short-haul and long-haul trucking for pallets, equipment, and general freight with real-time routing.</p>
         </div>
         <div class="card">
-          <span class="badge">Flatbed</span>
-          <h3>Flatbed Hauling</h3>
-          <p>Safe transport for oversized, irregular, or heavy cargo such as machinery and construction materials.</p>
-        </div>
-        <div class="card">
-          <span class="badge">Reefer</span>
-          <h3>Refrigerated Transport</h3>
-          <p>Temperature-controlled shipping for food, beverages, pharmaceuticals, and other sensitive goods.</p>
-        </div>
-        <div class="card">
-          <span class="badge">Express</span>
-          <h3>Expedited Freight</h3>
-          <p>Priority routing and fast delivery for time-critical shipments and high-value cargo.</p>
-        </div>
-        <div class="card">
-          <span class="badge">Moving</span>
-          <h3>Residential & Commercial Moving</h3>
-          <p>Professional moving services for homes and businesses, handled with care and planning.</p>
+          <div class="badge">Flexible Options</div>
+          <h3>Same-Day & Scheduled</h3>
+          <p>Book in advance or request urgent moves and deliveries with transparent pricing and clear ETAs.</p>
         </div>
       </div>
     </div>
@@ -570,94 +556,67 @@
     <div class="container two-col">
       <div>
         <div class="section-header">
-          <h2>Why Customers Choose CargoCloud</h2>
-          <p>We blend technology, experience, and service to deliver more than just freight—we deliver confidence.</p>
+          <h2>Why Customers Choose Us</h2>
+          <p>We combine professional drivers, modern routing tools, and responsive communication to keep your move or load on track.</p>
         </div>
-        <p><strong>On-Time Delivery Guarantee</strong> – We plan routes and schedules to keep your freight moving.</p>
-        <p><strong>Real-Time GPS Tracking</strong> – Know where your load is at every stage.</p>
-        <p><strong>Experienced CDL Drivers</strong> – Professional, safety-focused, and customer-oriented.</p>
-        <p><strong>Fully Insured & DOT Compliant</strong> – Your cargo is protected and compliant with regulations.</p>
-        <p><strong>Transparent Pricing</strong> – Clear, upfront estimates with no hidden fees.</p>
-        <p><strong>24/7 Dispatch Support</strong> – We’re available whenever you need us.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Experienced CDL Drivers</h3>
+            <p>Every driver is vetted, trained, and focused on safety and professionalism.</p>
+          </div>
+          <div class="card">
+            <h3>Transparent Pricing</h3>
+            <p>Distance-based estimates with clear surcharges for heavy, overnight, or special handling.</p>
+          </div>
+        </div>
       </div>
       <div>
-        <h3>What Our Clients Say</h3>
         <div class="testimonial">
-          “CargoCloud has been our most reliable carrier. Always on time, always professional.”
-          <span>Logistics Manager, Houston TX</span>
-        </div>
-        <br />
-        <div class="testimonial">
-          “Their moving team handled our office relocation flawlessly from start to finish.”
-          <span>Business Owner, Dallas TX</span>
+          “They handled our move and freight with care, arrived on time, and the pricing matched the estimate. Dispatch was easy to reach and kept us updated.”
+          <span>— CargoCloud Customer</span>
         </div>
       </div>
     </div>
   </section>
-
   <section id="estimate">
-    <div class="container">
-      <div class="section-header">
-        <h2>Instant Distance & Cost Estimate</h2>
-        <p>
-          Enter your pickup and drop-off locations, choose load and delivery type, and get an instant distance and cost estimate.
-          Final pricing will be confirmed by dispatch.
-        </p>
-      </div>
-
-      <div class="two-col">
-        <div>
-          <div class="field-wrapper">
-            <label for="pickup">Pickup Location</label>
-            <input id="pickup" type="text" autocomplete="off" placeholder="Enter pickup address" />
-            <div id="pickup-suggestions" class="autocomplete-suggestions"></div>
-          </div>
-
-          <div class="field-wrapper">
-            <label for="dropoff">Drop-off Location</label>
-            <input id="dropoff" type="text" autocomplete="off" placeholder="Enter drop-off address" />
-            <div id="dropoff-suggestions" class="autocomplete-suggestions"></div>
-          </div>
-
-          <label for="loadType">Load Type</label>
-          <select id="loadType">
-            <option value="0">Standard Load</option>
-            <option value="150">Heavy Load (+$150)</option>
-          </select>
-
-          <label for="deliveryType">Delivery Type</label>
-          <select id="deliveryType">
-            <option value="0">Regular Delivery</option>
-            <option value="200">Overnight (+$200)</option>
-          </select>
-
-          <button class="btn btn-primary" style="margin-top:14px;" onclick="calculateRoute()">Calculate Estimate</button>
-
-          <div id="result"></div>
+    <div class="container two-col">
+      <div>
+        <div class="section-header">
+          <h2>Instant Route & Cost Estimate</h2>
+          <p>Enter your pickup and drop-off locations to preview distance, route, and an estimated cost based on mileage and options.</p>
         </div>
 
-        <div>
-          <div id="map"></div>
+        <div class="field-wrapper">
+          <label for="pickup">Pickup location</label>
+          <input type="text" id="pickup" placeholder="Enter pickup address or city" autocomplete="off" />
+          <div id="pickup-suggestions" class="autocomplete-suggestions" style="display:none;"></div>
         </div>
+
+        <div class="field-wrapper">
+          <label for="dropoff">Drop-off location</label>
+          <input type="text" id="dropoff" placeholder="Enter drop-off address or city" autocomplete="off" />
+          <div id="dropoff-suggestions" class="autocomplete-suggestions" style="display:none;"></div>
+        </div>
+
+        <label for="serviceType">Service type</label>
+        <select id="serviceType">
+          <option value="standard">Standard freight / moving</option>
+          <option value="heavy">Heavy load</option>
+          <option value="overnight">Overnight / rush</option>
+        </select>
+
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" placeholder="Any special instructions, access notes, or cargo details..."></textarea>
+
+        <button id="estimateBtn" class="btn btn-primary" style="margin-top:12px;">
+          Calculate Estimate
+        </button>
+
+        <div id="result"></div>
       </div>
 
-      <div style="margin-top: 30px;">
-        <h3>Send Estimate to Dispatch</h3>
-        <p>We’ll receive your details and follow up to confirm and schedule your load or move.</p>
-
-        <label for="custName">Your Name</label>
-        <input id="custName" type="text" placeholder="John Doe" />
-
-        <label for="custPhone">Your Phone</label>
-        <input id="custPhone" type="text" placeholder="+1 (555) 123-4567" />
-
-        <label for="custEmail">Your Email</label>
-        <input id="custEmail" type="email" placeholder="you@example.com" />
-
-        <label for="custNotes">Additional Details (optional)</label>
-        <textarea id="custNotes" placeholder="Tell us about your load, timing, or special requirements"></textarea>
-
-        <button class="btn btn-primary" style="margin-top:14px;" onclick="sendEstimate()">Submit Request</button>
+      <div>
+        <div id="map"></div>
       </div>
     </div>
   </section>
@@ -666,197 +625,145 @@
     <div class="container two-col">
       <div>
         <div class="section-header">
-          <h2>Contact Dispatch</h2>
-          <p>We’re available 24/7 to help with quotes, scheduling, and support.</p>
+          <h2>Contact & Booking</h2>
+          <p>Ready to schedule a move or shipment? Share your details and our dispatch team will follow up with confirmation and final pricing.</p>
         </div>
-        <p><strong>Dispatch Phone:</strong> (XXX) XXX-XXXX</p>
+        <p><strong>Phone:</strong> (555) 123-4567</p>
         <p><strong>Email:</strong> dispatch@cargocloudtransport.com</p>
-        <p><strong>Address:</strong> Your business address here</p>
-        <p><strong>Hours:</strong> 24/7 Dispatch Available</p>
+        <p><strong>Service Area:</strong> Nationwide U.S. routes with regional focus on Texas and surrounding states.</p>
       </div>
       <div>
-        <h3>Working With CargoCloud</h3>
-        <p>
-          Whether you need a one-time move or a long-term freight partner, we’re ready to build a solution that fits your lanes,
-          timelines, and budget.
-        </p>
-        <p>
-          Use the estimator above for quick pricing, then reach out to lock in your schedule and confirm load details.
-        </p>
+        <div class="card">
+          <h3>Quick Booking Form</h3>
+          <p>Use the estimate tool above, then send us your details to lock in your move or shipment.</p>
+          <p style="font-size:0.85rem; color:#9ca3af;">
+            (Form submission can be wired to your email or CRM — this is a placeholder layout.)
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2026 CargoCloud Transport & Moving. All Rights Reserved.
+    CargoCloud Transport & Moving • Reliable trucking & moving services • All rights reserved.
   </footer>
 
+  <!-- Leaflet JS -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     crossorigin=""
   ></script>
 
   <script>
-    const DISPATCH_EMAIL = "dispatch@cargocloudtransport.com";
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 70,
-            behavior: "smooth"
-          });
-        }
-      });
-    });
-
-    // Map
-    const map = L.map("map", { preferCanvas: true }).setView([29.7604, -95.3698], 6);
+    // --- Map initialization ---
+    const map = L.map("map").setView([29.7604, -95.3698], 5); // Centered near Texas
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
-      attribution: "&copy; OpenStreetMap contributors",
+      attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
 
-    let routeLayerGroup;
-    let pickupMarker, dropoffMarker;
+    let routeLayer = null;
+    let startMarker = null;
+    let endMarker = null;
 
-    function hexToRgb(hex) {
-      hex = hex.replace("#", "");
-      if (hex.length === 3) {
-        hex = hex.split("").map(c => c + c).join("");
-      }
-      const num = parseInt(hex, 16);
-      return {
-        r: (num >> 16) & 255,
-        g: (num >> 8) & 255,
-        b: num & 255
-      };
+    // Store selected coordinates from autocomplete
+    let pickupCoords = null;   // { lat, lon }
+    let dropoffCoords = null;  // { lat, lon }
+
+    // --- Photon autocomplete helper ---
+    async function fetchSuggestions(query) {
+      if (!query || query.length < 3) return [];
+      const url = "https://photon.komoot.io/api/?q=" + encodeURIComponent(query) + "&limit=5";
+      const res = await fetch(url);
+      if (!res.ok) return [];
+      const data = await res.json();
+      return data.features || [];
     }
 
-    function interpolateColor(hex1, hex2, t) {
-      const c1 = hexToRgb(hex1);
-      const c2 = hexToRgb(hex2);
-      const r = Math.round(c1.r + (c2.r - c1.r) * t);
-      const g = Math.round(c1.g + (c2.g - c1.g) * t);
-      const b = Math.round(c1.b + (c2.b - c1.b) * t);
-      return `rgb(${r},${g},${b})`;
-    }
-
-    function drawGradientRoute(coords) {
-      if (routeLayerGroup) {
-        map.removeLayer(routeLayerGroup);
-      }
-      routeLayerGroup = L.layerGroup().addTo(map);
-
-      if (coords.length < 2) return;
-
-      const startColor = "#0ea5e9";
-      const endColor = "#22d3ee";
-      const n = coords.length - 1;
-
-      for (let i = 0; i < n; i++) {
-        const t = i / (n - 1 || 1);
-        const color = interpolateColor(startColor, endColor, t);
-        L.polyline([coords[i], coords[i + 1]], {
-          color,
-          weight: 5,
-          opacity: 0.95,
-          renderer: L.canvas()
-        }).addTo(routeLayerGroup);
-      }
-    }
-
-    // Autocomplete using Photon
-    function setupAutocomplete(inputId, suggestionBoxId) {
+    function setupAutocomplete(inputId, suggestionsId, onSelect) {
       const input = document.getElementById(inputId);
-      const box = document.getElementById(suggestionBoxId);
+      const box = document.getElementById(suggestionsId);
 
-      input.addEventListener("input", async () => {
-        const query = input.value.trim();
-        if (query.length < 3) {
+      let currentTimeout = null;
+
+      input.addEventListener("input", () => {
+        const value = input.value.trim();
+        if (currentTimeout) clearTimeout(currentTimeout);
+
+        if (value.length < 3) {
+          box.style.display = "none";
           box.innerHTML = "";
           return;
         }
 
-        try {
-          const res = await fetch(
-            "https://photon.komoot.io/api/?q=" +
-            encodeURIComponent(query) +
-            "&limit=5"
-          );
-          if (!res.ok) {
-            throw new Error("Autocomplete request failed");
-          }
-          const data = await res.json();
-
+        currentTimeout = setTimeout(async () => {
+          const features = await fetchSuggestions(value);
           box.innerHTML = "";
-          (data.features || []).slice(0, 5).forEach((place) => {
-            if (!place.geometry || !place.geometry.coordinates) return;
+          if (!features.length) {
+            box.style.display = "none";
+            return;
+          }
 
+          features.forEach((f) => {
             const div = document.createElement("div");
-            div.classList.add("autocomplete-suggestion");
+            div.className = "autocomplete-suggestion";
+            div.textContent = f.properties.name || f.properties.city || f.properties.street || "Location";
+            const lat = f.geometry.coordinates[1];
+            const lon = f.geometry.coordinates[0];
 
-            const name = place.properties.name || "";
-            const city = place.properties.city || "";
-            const state = place.properties.state || "";
-            const country = place.properties.country || "";
-            const label = [name, city, state, country].filter(Boolean).join(", ");
-
-            div.innerText = label;
-            div.onclick = () => {
-              input.value = label;
-              // Photon: [lon, lat]
-              input.dataset.lat = place.geometry.coordinates[1];
-              input.dataset.lon = place.geometry.coordinates[0];
+            div.addEventListener("click", () => {
+              input.value = div.textContent;
+              box.style.display = "none";
               box.innerHTML = "";
-            };
+              onSelect({ lat, lon, label: div.textContent });
+            });
+
             box.appendChild(div);
           });
-        } catch (e) {
-          console.error("Autocomplete error:", e);
-        }
+
+          box.style.display = "block";
+        }, 250);
       });
 
       document.addEventListener("click", (e) => {
         if (!box.contains(e.target) && e.target !== input) {
-          box.innerHTML = "";
+          box.style.display = "none";
         }
       });
     }
 
-    setupAutocomplete("pickup", "pickup-suggestions");
-    setupAutocomplete("dropoff", "dropoff-suggestions");
+    // Setup autocomplete for pickup and dropoff
+    setupAutocomplete("pickup", "pickup-suggestions", (loc) => {
+      pickupCoords = { lat: loc.lat, lon: loc.lon };
+    });
 
-    async function calculateRoute() {
-      const pickup = document.getElementById("pickup");
-      const dropoff = document.getElementById("dropoff");
-      const resultBox = document.getElementById("result");
+    setupAutocomplete("dropoff", "dropoff-suggestions", (loc) => {
+      dropoffCoords = { lat: loc.lat, lon: loc.lon };
+    });
 
-      if (!pickup.dataset.lat || !pickup.dataset.lon || !dropoff.dataset.lat || !dropoff.dataset.lon) {
-        resultBox.innerHTML = "Please select pickup and drop-off from the suggestions (click on a result).";
+    // --- Route + estimate calculation using direct OSRM (no Worker) ---
+    async function calculateRouteAndEstimate() {
+      const resultDiv = document.getElementById("result");
+      const btn = document.getElementById("estimateBtn");
+      const serviceType = document.getElementById("serviceType").value;
+
+      if (!pickupCoords || !dropoffCoords) {
+        resultDiv.textContent = "Please select both pickup and drop-off from the suggestions.";
         return;
       }
 
-      const startLat = parseFloat(pickup.dataset.lat);
-      const startLon = parseFloat(pickup.dataset.lon);
-      const endLat = parseFloat(dropoff.dataset.lat);
-      const endLon = parseFloat(dropoff.dataset.lon);
-
-      if (
-        isNaN(startLat) || isNaN(startLon) ||
-        isNaN(endLat)   || isNaN(endLon)
-      ) {
-        resultBox.innerHTML = "Invalid address. Please select a suggestion from the list.";
-        return;
-      }
-
-      resultBox.innerHTML = '<span class="spinner"></span>Calculating route and estimate...';
+      // Show loading state
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Calculating...';
+      resultDiv.textContent = "";
 
       try {
+        const startLon = pickupCoords.lon;
+        const startLat = pickupCoords.lat;
+        const endLon = dropoffCoords.lon;
+        const endLat = dropoffCoords.lat;
+
         const url =
           "https://router.maplibre.org/route/v1/driving/" +
           startLon + "," + startLat + ";" +
@@ -865,97 +772,65 @@
 
         const res = await fetch(url);
         if (!res.ok) {
-          throw new Error("Routing request failed with status " + res.status);
+          throw new Error("Routing server error: " + res.status);
         }
-        const data = await res.json();
 
-        if (!data.routes || !data.routes[0]) {
-          resultBox.innerHTML = "Route not found. Please try another address.";
-          return;
+        const data = await res.json();
+        if (!data.routes || !data.routes.length) {
+          throw new Error("No route found.");
         }
 
         const route = data.routes[0];
-        const distanceMeters = route.distance;
-        const durationSeconds = route.duration;
-        const distanceMiles = distanceMeters * 0.000621371;
+        const distanceMeters = route.distance;   // meters
+        const durationSeconds = route.duration;  // seconds
+
+        const distanceMiles = distanceMeters / 1609.34;
         const durationMinutes = durationSeconds / 60;
 
-        const baseFee = 500;
-        const perMile = 2.5;
-        const loadFee = parseFloat(document.getElementById("loadType").value);
-        const deliveryFee = parseFloat(document.getElementById("deliveryType").value);
+        // Simple pricing model
+        let baseRatePerMile = 2.5; // base
+        if (serviceType === "heavy") baseRatePerMile = 3.5;
+        if (serviceType === "overnight") baseRatePerMile = 4.0;
 
-        const total = baseFee + distanceMiles * perMile + loadFee + deliveryFee;
+        const estimatedCost = distanceMiles * baseRatePerMile;
 
-        const now = new Date();
-        const eta = new Date(now.getTime() + durationSeconds * 1000);
-        const etaStr = eta.toLocaleString();
+        // Update map
+        if (routeLayer) {
+          map.removeLayer(routeLayer);
+        }
+        if (startMarker) map.removeLayer(startMarker);
+        if (endMarker) map.removeLayer(endMarker);
 
-        resultBox.innerHTML =
-          "Distance: " + distanceMiles.toFixed(2) + " miles<br>" +
-          "Travel Time: " + durationMinutes.toFixed(0) + " minutes<br>" +
-          "ETA (approx): " + etaStr + "<br>" +
-          "Estimated Cost: $" + total.toFixed(2);
+        const coords = route.geometry.coordinates.map((c) => [c[1], c[0]]); // [lat, lon]
 
-        if (pickupMarker) map.removeLayer(pickupMarker);
-        if (dropoffMarker) map.removeLayer(dropoffMarker);
+        routeLayer = L.polyline(coords, {
+          color: "#38bdf8",
+          weight: 5,
+          opacity: 0.9
+        }).addTo(map);
 
-        pickupMarker = L.marker([startLat, startLon]).addTo(map);
-        dropoffMarker = L.marker([endLat, endLon]).addTo(map);
+        startMarker = L.marker([startLat, startLon]).addTo(map);
+        endMarker = L.marker([endLat, endLon]).addTo(map);
 
-        const coords = route.geometry.coordinates.map(([lon, lat]) => [lat, lon]);
-        drawGradientRoute(coords);
-        map.fitBounds(L.latLngBounds(coords));
+        map.fitBounds(routeLayer.getBounds(), { padding: [30, 30] });
 
-        resultBox.dataset.distance = distanceMiles.toFixed(2);
-        resultBox.dataset.cost = total.toFixed(2);
-        resultBox.dataset.eta = etaStr;
+        resultDiv.innerHTML =
+          "<strong>Distance:</strong> " + distanceMiles.toFixed(1) + " miles<br>" +
+          "<strong>Estimated drive time:</strong> " + durationMinutes.toFixed(0) + " minutes<br>" +
+          "<strong>Service type:</strong> " + serviceType.charAt(0).toUpperCase() + serviceType.slice(1) + "<br>" +
+          "<strong>Estimated cost:</strong> $" + estimatedCost.toFixed(2) +
+          "<br><span style='font-size:0.8rem;color:#9ca3af;'>Final pricing may vary based on exact load, access, and schedule.</span>";
+
       } catch (err) {
         console.error(err);
-        resultBox.innerHTML = "There was an error calculating the route. Please try again.";
+        resultDiv.textContent = "There was an error calculating the route. Please try again.";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Calculate Estimate";
       }
     }
 
-    function sendEstimate() {
-      const pickup = document.getElementById("pickup").value;
-      const dropoff = document.getElementById("dropoff").value;
-      const name = document.getElementById("custName").value;
-      const phone = document.getElementById("custPhone").value;
-      const email = document.getElementById("custEmail").value;
-      const notes = document.getElementById("custNotes").value;
-      const resultBox = document.getElementById("result");
-
-      const distance = resultBox.dataset.distance || "";
-      const cost = resultBox.dataset.cost || "";
-      const eta = resultBox.dataset.eta || "";
-      const estimateText = resultBox.innerText || "";
-
-      if (!pickup || !dropoff || !name || !phone || !email || !estimateText) {
-        alert("Please fill in all fields and calculate an estimate before submitting.");
-        return;
-      }
-
-      const payload = {
-        pickup,
-        dropoff,
-        name,
-        phone,
-        email,
-        notes,
-        distance,
-        cost,
-        eta,
-        estimate: estimateText,
-      };
-
-      fetch("https://formsubmit.co/" + encodeURIComponent(DISPATCH_EMAIL), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      }).catch((e) => console.error("Email send error:", e));
-
-      alert("Your estimate has been sent to dispatch. We’ll contact you shortly.");
-    }
+    document.getElementById("estimateBtn").addEventListener("click", calculateRouteAndEstimate);
   </script>
 </body>
 </html>
