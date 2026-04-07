@@ -6,234 +6,458 @@
 <title>Cargo Cloud Transport</title>
 
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
 
 <style>
-/* ------------------------------
-   GLOBAL DARK MODE THEME
------------------------------- */
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #0d0d0d;
-  color: #ffffff;
-  line-height: 1.6;
-}
+  /* GLOBAL */
+  * {
+    box-sizing: border-box;
+  }
 
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 700;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: #ffffff;
+  }
 
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
-/* ------------------------------
-   HEADER / NAV
------------------------------- */
-header {
-  background: #000000;
-  padding: 20px;
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #222;
-}
+  /* HEADER / NAV */
+  header {
+    background: #000000;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-/* ------------------------------
-   HERO SECTION
------------------------------- */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #000000, #111111);
-}
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
+  nav a {
+    margin-left: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
 
-.hero p {
-  font-size: 20px;
-  opacity: 0.8;
-}
+  nav a:hover {
+    opacity: 1;
+  }
 
-.hero button {
-  margin-top: 25px;
-  padding: 14px 28px;
-  font-size: 18px;
-  border: none;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #000000;
-  cursor: pointer;
-  font-weight: bold;
-}
+  /* SECTIONS */
+  section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
 
-.hero button:hover {
-  background: #e6e6e6;
-}
+  h1, h2, h3 {
+    margin-top: 0;
+  }
 
-/* ------------------------------
-   SERVICES SECTION
------------------------------- */
-.services {
-  text-align: center;
-}
+  /* HERO */
+  .hero {
+    padding: 80px 20px 60px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 30px;
+  }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
+  .hero-left h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
 
-.service-box {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #222;
-}
+  .hero-left p {
+    font-size: 18px;
+    opacity: 0.85;
+  }
 
-/* ------------------------------
-   PRICING SECTION
------------------------------- */
-.pricing {
-  text-align: center;
-}
+  .hero-cta {
+    margin-top: 25px;
+  }
 
-.pricing-box {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #222;
-  max-width: 500px;
-  margin: auto;
-}
+  .hero-cta button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+  }
 
-/* ------------------------------
-   CONTACT / DISPATCH FORM
------------------------------- */
-form input, form textarea, form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #111;
-  color: white;
-  font-size: 16px;
-}
+  .hero-cta button.secondary {
+    background: transparent;
+    border: 1px solid #555;
+    color: #ffffff;
+  }
 
-form button {
-  background: white;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-}
+  .hero-cta button:hover {
+    opacity: 0.9;
+  }
 
-form button:hover {
-  background: #e6e6e6;
-}
+  .hero-right {
+    background: radial-gradient(circle at top, #333, #000);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-/* ------------------------------
-   MAP ESTIMATOR
------------------------------- */
-#map {
-  height: 350px;
-  margin-top: 20px;
-  border-radius: 8px;
-  overflow: hidden;
-}
+  .hero-stat {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
 
-.estimate-box {
-  background: #1a1a1a;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  border: 1px solid #222;
-}
+  .hero-stat strong {
+    font-size: 18px;
+  }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #000;
-  border-top: 1px solid #222;
-  margin-top: 40px;
-}
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .service-card {
+    background: #151515;
+    border-radius: 8px;
+    padding: 18px;
+    border: 1px solid #222;
+  }
+
+  .service-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  /* PRICING */
+  .pricing-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+    gap: 30px;
+    margin-top: 25px;
+  }
+
+  .pricing-box {
+    background: #151515;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #222;
+  }
+
+  .pricing-box ul {
+    padding-left: 20px;
+    margin: 10px 0 0;
+  }
+
+  .pricing-box li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  /* FORM */
+  form {
+    margin-top: 20px;
+  }
+
+  form input,
+  form textarea,
+  form select,
+  form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  form textarea {
+    resize: vertical;
+  }
+
+  form button {
+    background: #ffffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    opacity: 0.9;
+  }
+
+  /* ESTIMATOR */
+  .estimator-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  #map {
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222;
+  }
+
+  .estimate-panel {
+    background: #151515;
+    border-radius: 8px;
+    padding: 18px;
+    border: 1px solid #222;
+  }
+
+  .estimate-panel h3 {
+    margin-top: 0;
+  }
+
+  .estimate-row {
+    margin-top: 10px;
+  }
+
+  .estimate-row label {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .estimate-row input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .estimate-actions {
+    margin-top: 15px;
+  }
+
+  .estimate-actions button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #ffffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .estimate-actions button:hover {
+    opacity: 0.9;
+  }
+
+  .estimate-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #111;
+    border: 1px solid #333;
+    font-size: 14px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 1px solid #222;
+    margin-top: 40px;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .pricing-layout,
+    .estimator-layout {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<header>Cargo Cloud Transport</header>
+<header>
+  <div class="logo">Cargo Cloud Transport</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#dispatch">Dispatch</a>
+    <a href="#estimator">Estimator</a>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Reliable Freight Transport Across America</h1>
-  <p>Professional, fast, and dependable trucking services — coast to coast.</p>
-  <button onclick="document.getElementById('estimator').scrollIntoView({behavior:'smooth'})">
-    Get an Instant Estimate
-  </button>
+<section id="hero" class="hero">
+  <div class="hero-left">
+    <h1>Reliable Freight Transport Across the U.S.</h1>
+    <p>
+      Cargo Cloud Transport delivers freight safely and on time—whether it’s regional, long‑haul, or expedited.
+    </p>
+    <div class="hero-cta">
+      <button onclick="document.getElementById('estimator').scrollIntoView({behavior:'smooth'})">
+        Get Instant Route Estimate
+      </button>
+      <button class="secondary" onclick="document.getElementById('dispatch').scrollIntoView({behavior:'smooth'})">
+        Request a Load
+      </button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <strong>24/7</strong><br />Dispatch & Support
+    </div>
+    <div class="hero-stat">
+      <strong>Nationwide</strong><br />Coverage Across Major Lanes
+    </div>
+    <div class="hero-stat">
+      <strong>On‑Time</strong><br />Performance You Can Count On
+    </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services">
-  <h2>Our Services</h2>
+<section id="services">
+  <h2>Services</h2>
+  <p>We cover a wide range of freight needs for shippers and brokers.</p>
   <div class="services-grid">
-    <div class="service-box">Long-Haul Freight</div>
-    <div class="service-box">Hotshot Delivery</div>
-    <div class="service-box">Heavy Equipment Transport</div>
-    <div class="service-box">Local & Regional Loads</div>
-    <div class="service-box">Expedited Shipping</div>
+    <div class="service-card">
+      <h3>Long‑Haul Freight</h3>
+      <p>Coast‑to‑coast and multi‑state routes with reliable scheduling.</p>
+    </div>
+    <div class="service-card">
+      <h3>Regional & Local</h3>
+      <p>Short‑haul and same‑day deliveries within your region.</p>
+    </div>
+    <div class="service-card">
+      <h3>Expedited & Hotshot</h3>
+      <p>Time‑critical loads moved with priority handling.</p>
+    </div>
+    <div class="service-card">
+      <h3>Heavy & Specialized</h3>
+      <p>Equipment and specialized freight with experienced drivers.</p>
+    </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="pricing">
-  <h2>Pricing</h2>
-  <div class="pricing-box">
-    <p><strong>Base Fee:</strong> $500</p>
-    <p><strong>Per Mile:</strong> $2.50</p>
-    <p><strong>Additional Services:</strong> Available upon request</p>
+<section id="pricing">
+  <h2>Pricing Overview</h2>
+  <p>Transparent, mileage‑based pricing with a simple structure.</p>
+  <div class="pricing-layout">
+    <div class="pricing-box">
+      <h3>Standard Linehaul</h3>
+      <ul>
+        <li><strong>Base Fee:</strong> $500 per load</li>
+        <li><strong>Per Mile:</strong> $2.50</li>
+        <li>Fuel surcharge may apply on select lanes</li>
+        <li>Detention and layover billed separately</li>
+      </ul>
+    </div>
+    <div class="pricing-box">
+      <h3>Additional Services</h3>
+      <ul>
+        <li>Expedited / Hotshot options</li>
+        <li>Weekend and overnight availability</li>
+        <li>Special handling for sensitive freight</li>
+        <li>Custom quotes for dedicated lanes</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- DISPATCH FORM -->
-<section>
-  <h2>Dispatch / Contact</h2>
-  <form>
-    <input placeholder="Your Name" required />
-    <input placeholder="Phone Number" required />
-    <input placeholder="Email Address" required />
-    <input placeholder="Pickup Location" required />
-    <input placeholder="Dropoff Location" required />
-    <textarea placeholder="Message" rows="4"></textarea>
-    <button type="submit">Submit Request</button>
+<!-- DISPATCH / CONTACT -->
+<section id="dispatch">
+  <h2>Dispatch & Contact</h2>
+  <p>Send us your lane details and we’ll follow up with a firm quote.</p>
+  <form id="dispatchForm" onsubmit="handleDispatchSubmit(event)">
+    <input id="name" placeholder="Your Name" required />
+    <input id="phone" placeholder="Phone Number" required />
+    <input id="email" placeholder="Email Address" required />
+    <input id="pickupField" placeholder="Pickup City / State" required />
+    <input id="dropoffField" placeholder="Dropoff City / State" required />
+    <select id="serviceType">
+      <option value="">Select Service Type</option>
+      <option value="longhaul">Long‑Haul Freight</option>
+      <option value="regional">Regional / Local</option>
+      <option value="expedited">Expedited / Hotshot</option>
+      <option value="heavy">Heavy / Specialized</option>
+    </select>
+    <textarea id="message" placeholder="Additional details (weight, equipment, dates, etc.)" rows="4"></textarea>
+    <button type="submit">Submit Dispatch Request</button>
   </form>
 </section>
 
-<!-- MAP ESTIMATOR -->
+<!-- ESTIMATOR -->
 <section id="estimator">
-  <h2>Instant Route Estimate</h2>
+  <h2>Instant Route Estimator</h2>
+  <p>Enter pickup and dropoff locations to see distance, ETA, and estimated cost.</p>
 
-  <input id="pickup" placeholder="Enter pickup city" />
-  <input id="dropoff" placeholder="Enter dropoff city" />
-  <button onclick="startEstimate()">Calculate Estimate</button>
+  <div class="estimator-layout">
+    <div>
+      <div id="map"></div>
+    </div>
+    <div class="estimate-panel">
+      <h3>Route Details</h3>
 
-  <div id="map"></div>
+      <div class="estimate-row">
+        <label for="pickupInput">Pickup Location</label>
+        <input id="pickupInput" placeholder="e.g. Houston, TX" />
+      </div>
 
-  <div class="estimate-box" id="estimateBox" style="display:none;">
-    <h3>Trip Estimate</h3>
-    <div id="estimateDetails"></div>
+      <div class="estimate-row">
+        <label for="dropoffInput">Dropoff Location</label>
+        <input id="dropoffInput" placeholder="e.g. Dallas, TX" />
+      </div>
+
+      <div class="estimate-actions">
+        <button onclick="startEstimate()">Calculate Route & Estimate</button>
+      </div>
+
+      <div class="estimate-box" id="estimateBox" style="display:none;">
+        <div id="estimateDetails"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -245,86 +469,150 @@ footer {
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-/* -------------------------------
+/* --------------------------------
    MAP INITIALIZATION
---------------------------------*/
-let map = L.map("map").setView([39.5, -98.35], 4);
-
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19
-}).addTo(map);
-
+---------------------------------*/
+let map;
 let routeLayer;
 
-/* -------------------------------
-   GEOCODING (PHOTON)
---------------------------------*/
-async function geocode(query) {
-  const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=1`;
-  const res = await fetch(url);
-  const data = await res.json();
+function initMap() {
+  map = L.map("map").setView([39.5, -98.35], 4);
 
-  if (!data.features.length) throw new Error("Location not found");
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19
+  }).addTo(map);
+}
+
+/* --------------------------------
+   GEOCODING (PHOTON)
+---------------------------------*/
+async function geocode(query) {
+  const url = "https://photon.komoot.io/api/?q=" +
+    encodeURIComponent(query) +
+    "&limit=1";
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("Geocoding request failed");
+
+  const data = await res.json();
+  if (!data.features || data.features.length === 0) {
+    throw new Error("Location not found: " + query);
+  }
 
   const [lon, lat] = data.features[0].geometry.coordinates;
   return { lon, lat };
 }
 
-/* -------------------------------
+/* --------------------------------
    ROUTING (CLOUDFLARE WORKER)
---------------------------------*/
+---------------------------------*/
 async function getRoute(startLon, startLat, endLon, endLat) {
   const res = await fetch("https://cool-feather-d561.cargocloudtransport.workers.dev/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ startLon, startLat, endLon, endLat })
+    body: JSON.stringify({
+      startLon,
+      startLat,
+      endLon,
+      endLat
+    })
   });
 
+  if (!res.ok) {
+    throw new Error("Routing request failed with status " + res.status);
+  }
+
   const data = await res.json();
-  if (!data.routes) throw new Error("No route found");
+  if (!data.routes || data.routes.length === 0) {
+    throw new Error("No route found");
+  }
+
   return data.routes[0];
 }
 
-/* -------------------------------
-   MAIN ESTIMATE FUNCTION
---------------------------------*/
-async function startEstimate() {
-  try {
-    const pickup = document.getElementById("pickup").value.trim();
-    const dropoff = document.getElementById("dropoff").value.trim();
+/* --------------------------------
+   DRAW ROUTE ON MAP
+---------------------------------*/
+function drawRouteOnMap(route) {
+  if (routeLayer) {
+    map.removeLayer(routeLayer);
+  }
 
-    if (!pickup || !dropoff) {
-      alert("Please enter both pickup and dropoff locations.");
-      return;
+  routeLayer = L.geoJSON(route.geometry, {
+    style: {
+      color: "#ffffff",
+      weight: 4
     }
+  }).addTo(map);
 
+  const bounds = routeLayer.getBounds();
+  map.fitBounds(bounds, { padding: [20, 20] });
+}
+
+/* --------------------------------
+   UPDATE ESTIMATE PANEL
+---------------------------------*/
+function updateEstimatePanel(route) {
+  const miles = route.distance * 0.000621371;
+  const hours = route.duration / 3600;
+  const cost = 500 + miles * 2.5;
+
+  const estimateBox = document.getElementById("estimateBox");
+  const estimateDetails = document.getElementById("estimateDetails");
+
+  estimateBox.style.display = "block";
+  estimateDetails.innerHTML = `
+    <p><strong>Distance:</strong> ${miles.toFixed(1)} miles</p>
+    <p><strong>Estimated Time:</strong> ${hours.toFixed(1)} hours</p>
+    <p><strong>Estimated Cost:</strong> $${cost.toFixed(2)}</p>
+  `;
+}
+
+/* --------------------------------
+   MAIN ESTIMATE FLOW
+---------------------------------*/
+async function startEstimate() {
+  const pickup = document.getElementById("pickupInput").value.trim();
+  const dropoff = document.getElementById("dropoffInput").value.trim();
+
+  if (!pickup || !dropoff) {
+    alert("Please enter both pickup and dropoff locations.");
+    return;
+  }
+
+  try {
     const start = await geocode(pickup);
     const end = await geocode(dropoff);
 
     const route = await getRoute(start.lon, start.lat, end.lon, end.lat);
 
-    if (routeLayer) map.removeLayer(routeLayer);
-
-    routeLayer = L.geoJSON(route.geometry, {
-      style: { color: "#ffffff", weight: 4 }
-    }).addTo(map);
-
-    map.fitBounds(routeLayer.getBounds());
-
-    const miles = route.distance * 0.000621371;
-    const hours = route.duration / 3600;
-    const cost = 500 + miles * 2.5;
-
-    document.getElementById("estimateBox").style.display = "block";
-    document.getElementById("estimateDetails").innerHTML = `
-      <p><strong>Distance:</strong> ${miles.toFixed(1)} miles</p>
-      <p><strong>Estimated Time:</strong> ${hours.toFixed(1)} hours</p>
-      <p><strong>Estimated Cost:</strong> $${cost.toFixed(2)}</p>
-    `;
+    drawRouteOnMap(route);
+    updateEstimatePanel(route);
   } catch (err) {
-    alert("Error calculating route. Please try again.");
+    console.error(err);
+    alert("We couldn't calculate your route. Please check your locations and try again.");
   }
 }
+
+/* --------------------------------
+   DISPATCH FORM HANDLER
+---------------------------------*/
+function handleDispatchSubmit(event) {
+  event.preventDefault();
+
+  // In a real setup, you’d send this to a backend or email service.
+  // For now, we just show a confirmation.
+  alert("Your dispatch request has been submitted. We will contact you shortly.");
+
+  event.target.reset();
+}
+
+/* --------------------------------
+   INIT
+---------------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+});
 </script>
 
 </body>
