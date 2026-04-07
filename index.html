@@ -831,31 +831,6 @@
     setupAutocomplete("pickup", "pickup-suggestions");
     setupAutocomplete("dropoff", "dropoff-suggestions");
 
-    // Helper: get route via Cloudflare Worker
-    async function getRouteViaWorker(startLon, startLat, endLon, endLat) {
-      const res = await fetch("https://cool-feather-d561.cargocloudtransport.workers.dev/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          startLon,
-          startLat,
-          endLon,
-          endLat
-        })
-      });
-
-      if (!res.ok) {
-        throw new Error("Routing request failed with status " + res.status);
-      }
-
-      const data = await res.json();
-      if (!data.routes || !data.routes[0]) {
-        throw new Error("No route found");
-      }
-
-      return data.routes[0];
-    }
-
     async function calculateRoute() {
       const pickup = document.getElementById("pickup");
       const dropoff = document.getElementById("dropoff");
@@ -882,8 +857,24 @@
       resultBox.innerHTML = '<span class="spinner"></span>Calculating route and estimate...';
 
       try {
-        const route = await getRouteViaWorker(startLon, startLat, endLon, endLat);
+        const url =
+          "https://router.maplibre.org/route/v1/driving/" +
+          startLon + "," + startLat + ";" +
+          endLon + "," + endLat +
+          "?overview=full&geometries=geojson";
 
+        const res = await fetch(url);
+        if (!res.ok) {
+          throw new Error("Routing request failed with status " + res.status);
+        }
+        const data = await res.json();
+
+        if (!data.routes || !data.routes[0]) {
+          resultBox.innerHTML = "Route not found. Please try another address.";
+          return;
+        }
+
+        const route = data.routes[0];
         const distanceMeters = route.distance;
         const durationSeconds = route.duration;
         const distanceMiles = distanceMeters * 0.000621371;
