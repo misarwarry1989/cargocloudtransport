@@ -781,14 +781,31 @@
           box.innerHTML = "";
           return;
         }
+async function calculateRoute(startLon, startLat, endLon, endLat) {
+  try {
+    const res = await fetch("https://cool-feather-d561.cargocloudtransport.workers.dev/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        startLon,
+        startLat,
+        endLon,
+        endLat
+      })
+    });
 
-        try {
-          const res = await fetch(
-            "https://photon.komoot.io/api/?q=" +
-              encodeURIComponent(query) +
-              "&lang=en&countrycode=US&lat=29.7604&lon=-95.3698"
-          );
-          const data = await res.json();
+    const data = await res.json();
+
+    if (!data.routes || data.routes.length === 0) {
+      throw new Error("No route found");
+    }
+
+    return data.routes[0];
+  } catch (err) {
+    console.error(err);
+    alert("There was an error calculating the route. Please try again.");
+  }
+}
 
           box.innerHTML = "";
           (data.features || []).slice(0, 5).forEach((place) => {
